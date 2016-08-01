@@ -22,7 +22,6 @@ from pygments.lexers.web import XmlLexer
 __all__ = ['CSharpLexer', 'NemerleLexer', 'BooLexer', 'VbNetLexer',
            'CSharpAspxLexer', 'VbNetAspxLexer', 'FSharpLexer']
 
-
 class CSharpLexer(RegexLexer):
     """
     For `C# <http://msdn2.microsoft.com/en-us/vcsharp/default.aspx>`_
@@ -111,8 +110,9 @@ class CSharpLexer(RegexLexer):
                  r'join|equals)\b', Keyword),
                 (r'(global)(::)', bygroups(Keyword, Punctuation)),
                 (r'(bool|byte|char|decimal|double|dynamic|float|int|long|object|'
+                 r'bit|int8|uint8|int16|uint16|int32|uint32|int64|uint64|CellId|'
                  r'sbyte|short|string|uint|ulong|ushort|var)\b\??', Keyword.Type),
-                (r'(class|struct)(\s+)', bygroups(Keyword, Text), 'class'),
+                (r'(class|struct|cell struct|protocol|server|proxy)(\s+)', bygroups(Keyword, Text), 'class'),
                 (r'(namespace|using)(\s+)', bygroups(Keyword, Text), 'namespace'),
                 (cs_ident, Name),
             ],
