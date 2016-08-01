@@ -113,7 +113,7 @@ class CSharpLexer(RegexLexer):
                 (r'(Array|List|DateTime|Guid|bool|byte|char|decimal|double|dynamic|float|int|long|object|'
                  r'bit|int8|uint8|int16|uint16|int32|uint32|int64|uint64|CellId|'
                  r'sbyte|short|string|uint|ulong|ushort|var)\b\??', Keyword.Type),
-                (r'(class|struct|cell struct|protocol|server|proxy)(\s+)', bygroups(Keyword, Text), 'class'),
+                (r'(class|struct|cell|cell struct|protocol|server|proxy)(\s+)', bygroups(Keyword, Text), 'class'),
                 (r'(namespace|using)(\s+)', bygroups(Keyword, Text), 'namespace'),
                 (cs_ident, Name),
             ],
